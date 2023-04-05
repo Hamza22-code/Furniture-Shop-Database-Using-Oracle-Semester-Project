@@ -1,0 +1,10 @@
+CREATE OR REPLACE PROCEDURE Customer_P (Cust_ID IN Number , Cust_NAME IN VARCHAR2 ) 
+IS 
+BEGIN
+insert into customer(c_id,c_name) values(Cust_id, Cust_NAME);
+END;
+
+BEGIN
+Customer_P(15,'Moiz');
+DBMS_OUTPUT.PUT_LINE('Record inserted Successful');
+END;

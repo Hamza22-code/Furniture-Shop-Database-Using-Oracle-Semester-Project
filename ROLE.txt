@@ -1,0 +1,6 @@
+alter session set "_ORACLE_SCRIPT" = true;
+Create role CustRole;
+Grant select, update, delete, insert on customer to CustRole;
+Grant create session,create view to CustRole;
+CREATE USER HAMZA IDENTIFIED by hr;
+Grant CustRole to HAMZA;

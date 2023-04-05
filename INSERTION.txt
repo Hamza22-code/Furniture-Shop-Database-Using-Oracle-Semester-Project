@@ -1,0 +1,42 @@
+-- Some sample value inserted in this section
+INSERT INTO shop VAlUES(1, 'Furniture Shop1','Lahore');
+INSERT INTO shop VAlUES(2, 'Furniture Shop2','Islamabad');
+
+INSERT INTO item VAlUES(1,550,1);
+INSERT INTO item VAlUES(2,650,1);
+INSERT INTO item VAlUES(3,750,1);
+INSERT INTO item VAlUES(4,850,1);
+INSERT INTO item VAlUES(5,950,1);
+INSERT INTO item VAlUES(6,1000,2);
+INSERT INTO item VAlUES(7,1500,2);
+INSERT INTO item VAlUES(8,2000,2);
+INSERT INTO item VAlUES(9,2500,2);
+INSERT INTO item VAlUES(10,3000,2);
+
+
+INSERT INTO stock VAlUES('chair1',1);
+INSERT INTO stock VAlUES('chair2',2);
+INSERT INTO stock VAlUES('chair3',3);
+INSERT INTO stock VAlUES('chair4',4);
+INSERT INTO stock VAlUES('chair5',5);
+INSERT INTO stock VAlUES('Furniture6',6);
+INSERT INTO stock VAlUES('Furniture7',6);
+INSERT INTO stock VAlUES('Desk',8);
+INSERT INTO stock VAlUES('Door',9);
+INSERT INTO stock VAlUES('Table',10);
+
+INSERT INTO customer VAlUES(1,'Hamza','Islamabad',01754675993);
+INSERT INTO customer VAlUES(2,'Hamza2','Lahore',01754675994);
+INSERT INTO customer VAlUES(3,'Hamza3','Islamabad',01754675995);
+INSERT INTO customer VAlUES(4,'Nouman4','Rawalpindi',01754675996);
+INSERT INTO customer VAlUES(5,'Nouman5','Karachi',01754675997);
+
+
+INSERT INTO payment VAlUES(550,1,1);
+INSERT INTO payment VAlUES(750,1,3);
+INSERT INTO payment VAlUES(3000,1,10);
+INSERT INTO payment VAlUES(850,2,4);
+INSERT INTO payment VAlUES(950,2,5);
+INSERT INTO payment VAlUES(1000,2,6);
+INSERT INTO payment VAlUES(1500,4,7);
+INSERT INTO payment VAlUES(650,5,6);

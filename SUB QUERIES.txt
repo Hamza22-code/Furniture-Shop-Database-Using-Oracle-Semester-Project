@@ -1,0 +1,51 @@
+-- Some select operation (Minimum 7/8 types and not repeated)
+SELECT it_price FROM item;
+SELECT it_id,it_price FROM item;
+SELECT quantity FROM stock;
+SELECT s_name,s_address FROM shop;
+SELECT c_id,amount FROM payment;
+SELECT c_id,c_ph FROM customer;
+SELECT c_name,c_address FROM customer;
+
+-- Searching operation including substring search (Minimum 2/3 types and not repeated)
+SELECT * FROM customer WHERE c_name = 'Hamza';
+SELECT * FROM customer WHERE c_address = 'Islamabad';
+SELECT * FROM item WHERE it_price >800;
+SELECT * FROM item WHERE it_price =3000;
+
+-- Sub-query (Minimum 2 types)
+     SELECT * FROM customer
+	WHERE c_id IN (
+		SELECT c_id FROM payment where amount=750
+        );
+     SELECT * FROM customer
+	WHERE c_id IN (
+		SELECT c_id FROM payment where amount=1000
+        );
+   SELECT * FROM customer
+	WHERE c_id IN (
+		SELECT c_id FROM payment where amount>600
+        );
+
+-- Set operations (Minimum 2 types)
+SELECT c_id FROM customer
+UNION 
+SELECT c_id FROM payment;`
+
+SELECT c_id FROM customer
+MINUS
+SELECT c_id FROM payment;
+
+SELECT it_id FROM item
+MINUS
+SELECT it_id FROM payment; 
+
+-- Some general select operation with aliasing
+SELECT s_address AS sad FROM shop;
+
+
+-- Example of Aggregate functions applied to the project (Minimum 4/5 types and not repeated)
+SELECT COUNT(c_id) FROM customer;
+SELECT COUNT(it_id) FROM item;
+SELECT SUM(it_price) FROM item;
+SELECT AVG(it_price) FROM item;

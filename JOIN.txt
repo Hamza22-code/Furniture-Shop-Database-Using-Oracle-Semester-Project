@@ -1,0 +1,25 @@
+-- Example of Join operations applied to the project
+   -- Natural join operation
+   SELECT * 
+   FROM item
+   NATURAL JOIN shop;
+
+   -- Inner join operation
+   SELECT payment.amount ,customer.c_name, customer.c_address FROM customer
+   INNER JOIN payment
+   ON customer.c_id=payment.c_id;
+
+   -- Left outer join operation
+   SELECT payment.amount ,customer.c_name, customer.c_address FROM customer
+   LEFT JOIN payment
+   ON customer.c_id=payment.c_id;
+
+   -- Right outer join operation
+   SELECT payment.amount ,customer.c_name, customer.c_address FROM customer
+   RIGHT JOIN payment
+   ON customer.c_id=payment.c_id;
+
+   -- Full outer join operation
+   SELECT payment.amount ,customer.c_name, customer.c_address FROM customer
+   FULL JOIN payment
+   ON customer.c_id=payment.c_id;

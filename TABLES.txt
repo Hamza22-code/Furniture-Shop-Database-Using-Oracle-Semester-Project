@@ -1,0 +1,57 @@
+-- This section is for dropping table
+
+DROP TABLE  payment;
+DROP TABLE  stock;
+DROP TABLE  customer;
+DROP TABLE  item;
+DROP TABLE  shop;
+
+-- This section is for Creating table
+create table customer(
+c_id   number(5),
+c_name   varchar(10),
+c_address   varchar(10),
+c_ph   number(12)
+);
+
+create table payment(
+amount number(5),
+c_id   number(5),
+it_id  number(5)
+);
+
+create table item(
+it_id  number(5),
+it_price  number(5),
+s_id   number(5)
+);
+
+create table stock(
+quantity   varchar(15),
+it_id   number(5)
+);
+
+create table shop(
+s_id   number(5),
+s_name   varchar(25),
+s_address   varchar(15)
+);
+
+-- This section creates primary keys
+ALTER TABLE  customer  ADD PRIMARY KEY (c_id);
+ALTER TABLE  item  ADD PRIMARY KEY (it_id);
+ALTER TABLE  shop  ADD PRIMARY KEY (s_id);
+
+-- This section creates foreign keys
+ALTER TABLE payment 
+	ADD FOREIGN KEY (c_id) 
+	REFERENCES  customer  (c_id);
+ALTER TABLE payment 
+	ADD FOREIGN KEY (it_id) 
+	REFERENCES  item  (it_id);
+ALTER TABLE stock 
+	ADD FOREIGN KEY (it_id) 
+	REFERENCES item (it_id);
+ALTER TABLE item 
+	ADD FOREIGN KEY (s_id) 
+	REFERENCES shop (s_id);

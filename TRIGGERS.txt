@@ -1,0 +1,17 @@
+CREATE OR REPLACE TRIGGER Item_PRICES_trg
+ AFTER 
+ UPDATE OR DELETE 
+ ON item
+ FOR EACH ROW 
+DECLARE
+ l_transaction VARCHAR2(10);
+BEGIN
+ -- determine the transaction type
+ l_transaction := CASE 
+ WHEN UPDATING THEN 'UPDATE'
+ WHEN DELETING THEN 'DELETE'
+ END;
+ INSERT INTO audits(audit_id, table_name, transaction_name, by_user, transaction_date)
+ VALUES(15,'item', l_transaction, USER, SYSDATE);
+ END;
+ UPDATE item set it_price=3400 WHERE it_id=4;

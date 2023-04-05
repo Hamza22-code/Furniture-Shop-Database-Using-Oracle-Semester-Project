@@ -1,0 +1,7 @@
+--This section is for creating views
+CREATE VIEW Demo1 AS (SELECT c_id,c_ph FROM customer);
+SELECT * FROM Demo1
+
+CREATE VIEW Demo2 AS (SELECT customer.c_id,customer.c_name,payment.it_id FROM customer
+INNER JOIN payment ON payment.c_id=customer.c_id);
+SELECT * FROM Demo2;
